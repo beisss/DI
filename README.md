@@ -1,8 +1,16 @@
-#Este es un archivo README.md
+<h1 align="center">Desarrollo de interfaces</h1>
 
-Contiene sintaxis markdown y se usa para:
+![Portada](src/portada.png.webp)
 
-· Dar una breve descripción del contenido del repositorio
-· Contar cómo sacar provecho del trabajo aquí presente
-· Explicar a los interesados cómo contribuir
-· etc.
+<p align="center">
+  <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green"/>
+  <img src="https://img.shields.io/github/stars/camilafernanda?style=social"/>
+</p>
+
+##Índice
+
+*[Título e imagen de portada](#Título-e-imagen-de-portada)
+
+*[Insignias](#insignias)
+
+*[Índice](#índice)
