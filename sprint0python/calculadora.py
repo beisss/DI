@@ -1,3 +1,4 @@
+# EJERCICIO 4
 from operaciones import sumaDosNumeros, restaDosNumeros, multDosNumeros, divDosNumeros
 
 repetir = True
@@ -12,7 +13,7 @@ while(repetir == True):
 
     while (opc != "a") & (opc != "b") & (opc != "c") & (opc != "d"):
         print("a. Suma\nb. Resta\nc. Multiplicación\nd. División\n")
-        opc = input("Elija una opción entre a, b, c o d: ")
+        opc = input("Elija una opción entre a, b, c o0 d: ")
 
     if opc == "a":
         print("El resultado es: " + str(sumaDosNumeros(n1, n2)))

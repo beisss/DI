@@ -1,5 +1,5 @@
 """
-# Ejercicio 1
+# EJERCICIO 1
 print("Adivina adivinanza... que tiene Iago Pombo en la panza?")
 print("a. Empanadillas\nb. Yogures\nc. El ombligo")
 
@@ -13,7 +13,7 @@ elif (opcion == "b") | (opcion == "c"):
     print("¡Respuesta errónea!")
 """
 
-# Ejercicio 2
+# EJERCICIO 2
 puntuacion = 0
 
 adivinanzas = {
@@ -30,7 +30,7 @@ opciones = {
 
 respuestas = {1: "a", 2: "c", 3: "c"}
 
-# Adivinanza 1
+# adivinanza 1
 print(adivinanzas[1])
 print(opciones[1])
 opcion = input("Elegir: ")
@@ -44,7 +44,7 @@ elif opcion != respuestas[1]:
     puntuacion = puntuacion - 5
     print("Respuesta incorrecta, -5 puntos.\nPuntuación total: " + str(puntuacion) + "\n")
 
-# Adivinanza 2
+# adivinanza 2
 print(adivinanzas[2])
 print(opciones[2])
 opcion = input("Elegir: ")
@@ -58,7 +58,7 @@ elif opcion != respuestas[3]:
     puntuacion = puntuacion - 5
     print("Respuesta incorrecta, -5 puntos.\nPuntuación total: " + str(puntuacion) + "\n")
 
-# Adivinanza 3
+# adivinanza 3
 print(adivinanzas[3])
 print(opciones[3])
 opcion = input("Elegir: ")
