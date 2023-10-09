@@ -1,3 +1,4 @@
+from tkinter import Image
 from PIL import ImageTk
 
 class Cell:
