@@ -6,6 +6,8 @@ from tkinter import messagebox
 from detail_window import detailWindow
 
 class MainWindow:
+
+    # Función que ejecuta detailWindow
     def onButtonClicked(self, cell):
         detailWindow(cell)
 
@@ -21,17 +23,22 @@ class MainWindow:
             Cell("Turtwig","/Users/beis/Documentos/di/sprint1tkinter/dialog/catalog/data/unedited/turtwig.png","Turtwig es un Pokémon de tipo Planta. Es conocido por llevar una pequeña planta en su espalda y representa la fuerza de la naturaleza en su crecimiento lento pero constante."),
         ]
 
-        # 
+        # Bucle for que ejecuta su contenido por cada una de las celdas
         for i, cell in enumerate(self.cells):
             img = Image.open(cell.path) # Abre una imagen sobre la ruta cell.path
             imgResized = img.resize((100,100),Image.Resampling.LANCZOS) # Redimensiona la imagen
 
-            cell.image_tk = ImageTk.PhotoImage(imgResized)  
+            cell.image_tk = ImageTk.PhotoImage(imgResized)  # La imagen es mostrable en pantalla ahora
 
+            # Crea una etiqueta que muestra la imagen, el texto y la posiciona
             label = ttk.Label(
                 root, image=cell.image_tk, text=cell.title, compound=tk.BOTTOM
             )
+
+            # Ajusta la posición de manera horizontal
             label.grid(row=0, column=i)
+
+            # Establece una acción al momento de clicar la etiqueta, ejecuta onButtonClicked
             label.bind(
                 "<Button-1>",lambda event, cell=cell: self.onButtonClicked(cell)
             )
