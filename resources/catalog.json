@@ -1,0 +1,27 @@
+[
+    {
+        "name":"Charizard",
+        "description":"Charizard es un poderoso Pokémon de tipo Fuego/Volador conocido por su imponente apariencia y su aliento de fuego. Es un símbolo de valentía y determinación.",
+        "image_url":"https://raw.githubusercontent.com/beisss/DI/main/sprint1tkinter/dialog/catalog/data/edited/charizard.jpeg"
+    },
+    {
+        "name":"Gengar",
+        "description":"Gengar es un astuto Pokémon de tipo Fantasma/Veneno. Siempre acecha en las sombras y disfruta asustando a los incautos. Es un maestro de las artes furtivas.",
+        "image_url":"https://raw.githubusercontent.com/beisss/DI/main/sprint1tkinter/dialog/catalog/data/edited/gengar.png"
+    },
+    {
+        "name":"Pikachu",
+        "description":"Pikachu es la mascota más icónica de Pokémon, conocida por su ternura y su ataque característico, el Rayo. Es un compañero leal y entrañable en las aventuras de entrenadores.",
+        "image_url":"https://raw.githubusercontent.com/beisss/DI/main/sprint1tkinter/dialog/catalog/data/edited/pikachu.png"
+    },
+    {
+        "name":"Snorlax",
+        "description":"Snorlax es un masivo Pokémon de tipo Normal que suele dormir y bloquear caminos. Su apetito insaciable y su naturaleza tranquila lo hacen un personaje único.",
+        "image_url":"https://raw.githubusercontent.com/beisss/DI/main/sprint1tkinter/dialog/catalog/data/edited/snorlax.jpeg"
+    },
+    {
+        "name":"Turtwig",
+        "description":"Turtwig es un Pokémon de tipo Planta. Es conocido por llevar una pequeña planta en su espalda y representa la fuerza de la naturaleza en su crecimiento lento pero constante.",
+        "image_url":"https://raw.githubusercontent.com/beisss/DI/main/sprint1tkinter/dialog/catalog/data/edited/turtwig.png"
+    }
+]
