@@ -1,9 +1,13 @@
 import threading
 import tkinter as tk
+import requests
+from window import MainWindow
 
 class LoadingWindow:
     def __init__(self,root):
         self.root = root                    # Hace referencia a la ventana principal de la aplicación
+        self.finished = False
+        self.json_data = []
         self.root.title("Cargando...")      # Configura el título de la ventana principal
         self.root.geometry("170x120")       # Establece el tamaño de la ventana principal
         self.root.resizable(False,False)    # Desactiva la capacidad de cambiar el tamaño de la ventana
@@ -43,3 +47,25 @@ class LoadingWindow:
         
         self.draw_progress_circle(self.progress)            # Llama a la función draw_progress_circle y le pasa el parámetro de progress
         self.root.after(100, self.update_progress_circle)   # Establece un temporizador que ejecutará la función update_progress_circle después de 100 milisegundos
+
+    def fetch_json_data(self):
+        # Realiza una solicitud HTTP y guarda el JSON en response
+        response = requests.get("https://github.com/beisss/DI/blob/main/resources/catalog.json")
+        # Verifica que la solicitud fue exitosa
+        if response.status_code == 200:
+            self.json_data = response.json()
+            self.finished=True
+    
+    # Verifica si el hilo en segundo plano ha terminado
+    def check_thread(self):
+        if self.finished:       
+            self.root.destroy()
+            launch_main_window(self.json_data)
+        else:                   
+            self.root.after(100, self.check_thread)
+
+# Procede a ejecutar MainWindow
+def launch_main_window(json_data):
+    root = tk.Tk()
+    app = MainWindow(root,json_data)
+    root.mainloop()
