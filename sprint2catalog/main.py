@@ -7,6 +7,6 @@ from loading_window import LoadingWindow
 if __name__ == "__main__":
     # Crea una ventana
     root = Tk()
-    # Ejecuta MainWindow
+    # Ejecuta LoadingWindow
     app = LoadingWindow(root)
     root.mainloop()

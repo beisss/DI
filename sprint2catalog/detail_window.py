@@ -7,7 +7,7 @@ def detailWindow(cell):
     root = tk.Toplevel()
 
     # Crea una etiqueta con la imagen, una con el título y otra con la descripción
-    label1 = ttk.Label(root, image=cell.image_tk)
+    label1 = ttk.Label(root, image=cell.Image_tk)
     label2 = ttk.Label(root, text=cell.title)
     label3 = ttk.Label(root, text=cell.desc)
 

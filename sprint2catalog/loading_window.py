@@ -1,3 +1,4 @@
+import sys
 import threading
 import tkinter as tk
 import requests
@@ -30,6 +31,9 @@ class LoadingWindow:
         self.thread = threading.Thread(target=self.fetch_json_data)
         self.thread.start()
 
+        self.fetch_json_data()
+        self.check_thread()
+
     def draw_progress_circle(self, progress):
         self.canvas.delete("progress")      # Borra todos los elementos con la etiqueta 'progress'
         angle = int(360 * (progress/100))   # Calcula un ángulo en grados
@@ -50,19 +54,22 @@ class LoadingWindow:
 
     def fetch_json_data(self):
         # Realiza una solicitud HTTP y guarda el JSON en response
-        response = requests.get("https://github.com/beisss/DI/blob/main/resources/catalog.json")
+        response = requests.get("https://raw.githubusercontent.com/beisss/DI/main/resources/catalog.json")
         # Verifica que la solicitud fue exitosa
         if response.status_code == 200:
             self.json_data = response.json()
             self.finished=True
+        else:
+            print("Error al cargar datos." + response.status_code)
+            sys.exit(1)
     
     # Verifica si el hilo en segundo plano ha terminado
     def check_thread(self):
         if self.finished:       
-            self.root.destroy()
-            launch_main_window(self.json_data)
+            self.root.destroy() # Destruye la ventana principal
+            launch_main_window(self.json_data)  # Lanza el método y le manda el json data
         else:                   
-            self.root.after(100, self.check_thread)
+            self.root.after(100, self.check_thread) # Después de 100ms llama de nuevo al método
 
 # Procede a ejecutar MainWindow
 def launch_main_window(json_data):
