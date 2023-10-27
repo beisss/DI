@@ -13,6 +13,10 @@ class MainWindow:
 
         cells = [] # Inicializa una lista de celdas vacías
 
+        x = (root.winfo_screenwidth() - root.winfo_reqwidth()) / 2
+        y = (root.winfo_screenheight() - root.winfo_reqheight()) / 2
+        root.geometry(f"+{int(x)}+{int(y)}")
+
         # Procesa json_data para crear las celdas
         for item in json_data:
             # Obtiene el valor asociado a la clave y lo almacena

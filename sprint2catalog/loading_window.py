@@ -13,6 +13,10 @@ class LoadingWindow:
         self.root.geometry("170x120")       # Establece el tamaño de la ventana principal
         self.root.resizable(False,False)    # Desactiva la capacidad de cambiar el tamaño de la ventana
 
+        x = (root.winfo_screenwidth() - root.winfo_reqwidth()) / 2
+        y = (root.winfo_screenheight() - root.winfo_reqheight()) / 2
+        root.geometry(f"+{int(x)}+{int(y)}")
+
         # Crea una etiqueta con los datos señalados
         self.label = tk.Label(self.root, text="Cargando datos...", font=("Arial", 14))
         self.label.pack(side=tk.TOP, pady=10)
