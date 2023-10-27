@@ -13,9 +13,9 @@ class LoadingWindow:
         self.root.geometry("170x120")       # Establece el tamaño de la ventana principal
         self.root.resizable(False,False)    # Desactiva la capacidad de cambiar el tamaño de la ventana
 
-        x = (root.winfo_screenwidth() - root.winfo_reqwidth()) / 2
-        y = (root.winfo_screenheight() - root.winfo_reqheight()) / 2
-        root.geometry(f"+{int(x)}+{int(y)}")
+        x = (self.root.winfo_screenwidth() - self.root.winfo_reqwidth()) / 2
+        y = (self.root.winfo_screenheight() - self.root.winfo_reqheight()) / 2
+        self.root.geometry(f"+{int(x)}+{int(y)}")
 
         # Crea una etiqueta con los datos señalados
         self.label = tk.Label(self.root, text="Cargando datos...", font=("Arial", 14))
@@ -35,8 +35,8 @@ class LoadingWindow:
         self.thread = threading.Thread(target=self.fetch_json_data)
         self.thread.start()
 
-        self.fetch_json_data()
-        self.check_thread()
+        if self.thread.is_alive():
+            self.check_thread()
 
     def draw_progress_circle(self, progress):
         self.canvas.delete("progress")      # Borra todos los elementos con la etiqueta 'progress'
@@ -63,9 +63,6 @@ class LoadingWindow:
         if response.status_code == 200:
             self.json_data = response.json()
             self.finished=True
-        else:
-            print("Error al cargar datos." + response.status_code)
-            sys.exit(1)
     
     # Verifica si el hilo en segundo plano ha terminado
     def check_thread(self):
