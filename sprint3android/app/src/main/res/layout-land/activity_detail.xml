@@ -17,7 +17,7 @@
         android:layout_marginLeft="75dp"
 
         android:textSize="22pt"
-        android:text="título"
+        android:text="Pikachu"
         android:id="@+id/title1"
         />
 
@@ -39,7 +39,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_launcher_background"
+            android:src="@drawable/pikachu"
             />
     </androidx.cardview.widget.CardView>
 
@@ -56,7 +56,7 @@
         android:layout_marginRight="30dp"
 
         android:textAlignment="center"
-        android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+        android:text="El mejor amigo del hombre."
         android:id="@+id/description"
         />
 

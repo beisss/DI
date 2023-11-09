@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="15dp"
         android:textSize="22pt"
-        android:text="título"
+        android:text="Pikachu"
         android:id="@+id/title1"
         />
 
@@ -31,7 +31,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_launcher_background"
+            android:src="@drawable/pikachu"
             />
     </androidx.cardview.widget.CardView>
 
@@ -43,7 +43,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:textAlignment="center"
-        android:text="Descripción"
+        android:text="El mejor amigo del hombre"
         android:id="@+id/description"
         />
 
