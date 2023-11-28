@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -71,6 +73,25 @@ public class MainActivity extends AppCompatActivity {
                         MyAdapter adapter = new MyAdapter(allThePokemon, activity);
                         recyclerView.setAdapter(adapter);  // Asigna el adaptador al RecyclerView
                         recyclerView.setLayoutManager(new LinearLayoutManager(activity));  // Configura el diseño del RecyclerView
+
+                        // Establece un Listener de clics para los elementos del RecyclerView
+                        adapter.setOnItemClickListener(new MyAdapter.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(int position) {
+                                try {
+                                    // Crea un Intent para abrir la actividad DetailActivity
+                                    Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+
+                                    // Inicia la actividad DetailActivity
+                                    startActivity(intent);
+                                } catch (Exception e) {
+                                    // Captura y registra cualquier excepción que ocurra al abrir DetailActivity
+                                    e.printStackTrace();
+                                    Log.e("TAG", "Error al abrir DetailActivity: " + e.getMessage());
+                                }
+                            }
+                        });
+
                     }
                 },
                 new Response.ErrorListener() {

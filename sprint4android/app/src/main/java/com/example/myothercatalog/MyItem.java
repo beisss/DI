@@ -3,6 +3,8 @@ package com.example.myothercatalog;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
+
 public class MyItem {
 
     private String itemName;  // Nombre del elemento
