@@ -79,8 +79,14 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onItemClick(int position) {
                                 try {
+                                    // Obtiene el objeto MyItem correspondiente a la posición seleccionada
+                                    MyItem pokemonClicked = allThePokemon.get(position);
+
                                     // Crea un Intent para abrir la actividad DetailActivity
                                     Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+
+                                    // Agrega el objeto MyItem como extra al Intent con la clave "pokemon"
+                                    intent.putExtra("pokemon", pokemonClicked);
 
                                     // Inicia la actividad DetailActivity
                                     startActivity(intent);
