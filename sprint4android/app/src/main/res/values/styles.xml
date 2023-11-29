@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bgColor">#c53d46</color>
+    <color name="ColorText">#ffffff</color>
+    <color name="buttonColor">#03459C</color>
+
+    <style name="MyOtherCatalogTemaPersonalizado" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowBackground">@color/bgColor</item>
+        <item name="android:textColor">@color/ColorText</item>
+    </style>
+
+    <style name="estiloDA" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">#aa3139</item>
+    </style>
+
+    <style name="estiloButtonDA" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">#1068c9</item>
+    </style>
+</resources>
